@@ -1,0 +1,5 @@
+This repository demonstrates a common error in Express.js applications where the handling of empty or invalid JSON request bodies is not implemented correctly.  The `bug.js` file showcases the problematic code, which logs an empty object for empty requests and throws an error for invalid JSON.  The `bugSolution.js` file provides a corrected implementation that gracefully handles these scenarios.
+
+**Problem:** When an empty JSON or an invalid JSON is sent to the `/data` endpoint, the server either logs an empty object or throws a parsing error. This is not ideal for a production environment as it can cause unexpected behavior or crashes.
+
+**Solution:** The solution involves adding error handling using a `try...catch` block to handle potential `JSON.parse` errors and providing appropriate responses to clients in case of errors.
